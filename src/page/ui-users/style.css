@@ -1,0 +1,10 @@
+.tableToolbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+.titlePage {
+    font-size: 120%;
+    font-weight: bold;
+}

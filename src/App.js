@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {Route, Routes} from "react-router-dom";
+import {UiUsers, UiProjects} from './page'
+import {getRouterUrl, URL_HOME, URL_USERS, URL_PROJECTS} from "./io/router/urls";
 
-function App() {
+const App = ({}) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Suspense fallback="loading">
+      <Routes>
+        <Route path={getRouterUrl(URL_HOME)} element={<UiUsers/>}/>
+        <Route path={getRouterUrl(URL_USERS)} element={<UiUsers/>}/>
+        <Route path={getRouterUrl(URL_PROJECTS)} element={<UiProjects/>}/>
+      </Routes>
+    </React.Suspense>
   );
 }
-
 export default App;
